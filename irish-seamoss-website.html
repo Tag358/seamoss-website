@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irish Sea Moss - Pure Superfood Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean-teal: #2A9D8F;
+            --deep-ocean: #1B7A6D;
+            --seafoam: #E8F5F3;
+            --sand-white: #FDFCF8;
+            --coral: #F4A261;
+            --navy: #264653;
+            --soft-gray: #6B7280;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Barlow', sans-serif;
+            background: var(--sand-white);
+            color: var(--navy);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #E0F2F1 0%, #B2DFDB 50%, #80CBC4 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: -15%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(42, 157, 143, 0.2) 0%, transparent 70%);
+            border-radius: 45% 55% 60% 40%;
+            animation: wave 12s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -25%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(38, 70, 83, 0.15) 0%, transparent 70%);
+            border-radius: 60% 40% 45% 55%;
+            animation: wave 15s ease-in-out infinite reverse;
+        }
+
+        @keyframes wave {
+            0%, 100% { 
+                transform: translate(0, 0) rotate(0deg) scale(1);
+                border-radius: 45% 55% 60% 40%;
+            }
+            50% { 
+                transform: translate(30px, -40px) rotate(5deg) scale(1.08);
+                border-radius: 55% 45% 40% 60%;
+            }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(3.5rem, 9vw, 7rem);
+            font-weight: 700;
+            color: var(--deep-ocean);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.05);
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        .tagline {
+            font-size: clamp(1.3rem, 3.5vw, 2rem);
+            color: var(--navy);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            animation: fadeInUp 1s ease-out 0.4s backwards;
+        }
+
+        .product-description {
+            max-width: 750px;
+            margin: 0 auto 3rem;
+            font-size: 1.15rem;
+            color: var(--navy);
+            line-height: 1.9;
+            animation: fadeInUp 1s ease-out 0.6s backwards;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1.3rem 3.5rem;
+            background: linear-gradient(135deg, var(--ocean-teal) 0%, var(--deep-ocean) 100%);
+            color: white;
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+            box-shadow: 0 12px 35px rgba(42, 157, 143, 0.35);
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(42, 157, 143, 0.45);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 6rem 2rem;
+            background: white;
+            position: relative;
+        }
+
+        .features::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 120px;
+            background: linear-gradient(to bottom, #80CBC4, white);
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3.5rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2.5rem;
+            border-radius: 25px;
+            transition: all 0.4s ease;
+            background: var(--seafoam);
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out forwards;
+            border: 2px solid transparent;
+        }
+
+        .feature:nth-child(1) { animation-delay: 0.2s; }
+        .feature:nth-child(2) { animation-delay: 0.4s; }
+        .feature:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .feature:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.12);
+            border-color: var(--ocean-teal);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--deep-ocean);
+            font-weight: 600;
+        }
+
+        .feature p {
+            color: var(--soft-gray);
+            line-height: 1.8;
+        }
+
+        /* Recipe Section */
+        .recipes {
+            padding: 6rem 2rem;
+            background: linear-gradient(to bottom, white, var(--seafoam));
+        }
+
+        .recipes-header {
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .recipes-header h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            color: var(--deep-ocean);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .recipes-header p {
+            font-size: 1.2rem;
+            color: var(--soft-gray);
+        }
+
+        .recipes-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 3.5rem;
+            align-items: start;
+        }
+
+        @media (max-width: 900px) {
+            .recipes-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Sidebar */
+        .recipe-sidebar {
+            background: white;
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 0 12px 45px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 2rem;
+            border: 2px solid var(--seafoam);
+        }
+
+        .sidebar-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.75rem;
+            color: var(--deep-ocean);
+            margin-bottom: 2rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 3px solid var(--seafoam);
+            font-weight: 600;
+        }
+
+        .recipe-list {
+            list-style: none;
+        }
+
+        .recipe-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .recipe-link {
+            display: block;
+            padding: 1.1rem 1.25rem;
+            color: var(--navy);
+            text-decoration: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            border-left: 4px solid transparent;
+            font-size: 1.05rem;
+        }
+
+        .recipe-link:hover {
+            background: var(--seafoam);
+            border-left-color: var(--ocean-teal);
+            transform: translateX(8px);
+        }
+
+        .recipe-link.active {
+            background: linear-gradient(135deg, var(--ocean-teal), var(--deep-ocean));
+            color: white;
+            font-weight: 600;
+            border-left-color: var(--deep-ocean);
+            box-shadow: 0 6px 20px rgba(42, 157, 143, 0.3);
+        }
+
+        /* Recipe Display */
+        .recipe-display {
+            background: white;
+            border-radius: 25px;
+            padding: 3.5rem;
+            box-shadow: 0 12px 45px rgba(0,0,0,0.08);
+            min-height: 500px;
+            border: 2px solid var(--seafoam);
+        }
+
+        .recipe-card {
+            display: none;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .recipe-card.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .recipe-card h3 {
+            font-family: 'Crimson Text', serif;
+            font-size: 2.8rem;
+            color: var(--deep-ocean);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .recipe-meta {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--seafoam);
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--soft-gray);
+            font-size: 1.05rem;
+        }
+
+        .meta-item span {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .recipe-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .recipe-section h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            color: var(--deep-ocean);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .ingredients-list,
+        .instructions-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .ingredients-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--seafoam);
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+
+        .ingredients-list li::before {
+            content: '🌊';
+            margin-right: 1.25rem;
+            font-size: 1.4rem;
+        }
+
+        .instructions-list li {
+            padding: 1.25rem 0;
+            padding-left: 3rem;
+            position: relative;
+            border-bottom: 1px dashed var(--seafoam);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .instructions-list li::before {
+            content: counter(item);
+            counter-increment: item;
+            position: absolute;
+            left: 0;
+            top: 1.25rem;
+            background: var(--ocean-teal);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .instructions-list {
+            counter-reset: item;
+        }
+
+        .benefits-note {
+            background: linear-gradient(135deg, var(--seafoam), #D4F1E8);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border-left: 5px solid var(--ocean-teal);
+        }
+
+        .benefits-note strong {
+            color: var(--deep-ocean);
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: var(--seafoam);
+            text-align: center;
+            padding: 2.5rem;
+        }
+
+        footer p {
+            font-size: 1.05rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Irish Sea Moss</h1>
+            <p class="tagline">92 Essential Minerals. Pure Superfood Nutrition.</p>
+            <p class="product-description">
+                Experience the nutrient-dense power of authentic Irish Sea Moss, a natural superfood used for centuries across the Caribbean, Africa, and Europe. Our premium sea moss gel delivers 92 of the 102 minerals your body needs, supporting thyroid function, immunity, digestion, and cellular health. Transform your wellness with nature's most complete superfood.
+            </p>
+            <a href="#" class="cta-button">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">🧬</div>
+                <h3>92 Essential Minerals</h3>
+                <p>Contains iodine, magnesium, potassium, calcium, iron, zinc, and selenium—supporting thyroid function, energy, immune health, and bone strength.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🌿</div>
+                <h3>Natural Superfood</h3>
+                <p>Raw, nutrient-dense superfood with antiviral and antimicrobial compounds. Supports gut health, hydration, and natural detoxification.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">💪</div>
+                <h3>Holistic Wellness</h3>
+                <p>Promotes weight management, hormonal balance, improved recovery, better sleep quality, and glowing skin—all from one plant-based ingredient.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recipe Section -->
+    <section class="recipes" id="recipes">
+        <div class="recipes-header">
+            <h2>Delicious Sea Moss Recipes</h2>
+            <p>Transform your wellness with these nutrient-packed drinks</p>
+        </div>
+
+        <div class="recipes-container">
+            <!-- Sidebar -->
+            <aside class="recipe-sidebar">
+                <h3 class="sidebar-title">Browse Recipes</h3>
+                <ul class="recipe-list">
+                    <li><a href="#" class="recipe-link active" data-recipe="basic-shake">Basic Sea Moss Shake</a></li>
+                    <li><a href="#" class="recipe-link" data-recipe="berry-slim">Berry Slim Shake</a></li>
+                    <li><a href="#" class="recipe-link" data-recipe="tropical">Tropical Light Shake</a></li>
+                    <li><a href="#" class="recipe-link" data-recipe="chocolate">Chocolate Protein Lite</a></li>
+                    <li><a href="#" class="recipe-link" data-recipe="green-detox">Green Detox Shake</a></li>
+                    <li><a href="#" class="recipe-link" data-recipe="tea">Sea Moss Tea</a></li>
+                </ul>
+            </aside>
+
+            <!-- Recipe Display -->
+            <div class="recipe-display">
+                <!-- Recipe 1: Basic Sea Moss Shake -->
+                <div class="recipe-card active" id="basic-shake">
+                    <h3>Basic Sea Moss Shake</h3>
+                    <div class="recipe-meta">
+                        <div class="meta-item">⏱️ <span>5 mins</span></div>
+                        <div class="meta-item">👥 <span>Serves 1</span></div>
+                        <div class="meta-item">🔥 <span>Easy</span></div>
+                        <div class="meta-item">⚖️ <span>Low-Calorie</span></div>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Ingredients</h4>
+                        <ul class="ingredients-list">
+                            <li>1–2 tablespoons sea moss gel</li>
+                            <li>1 cup unsweetened almond milk (30 calories)</li>
+                            <li>½ ripe banana</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Instructions</h4>
+                        <ol class="instructions-list">
+                            <li>Scoop sea moss gel into a blender</li>
+                            <li>Add almond milk and banana</li>
+                            <li>Blend until smooth and creamy</li>
+                            <li>Serve cold and enjoy</li>
+                        </ol>
+                    </div>
+
+                    <div class="benefits-note">
+                        <strong>Benefits:</strong> Perfect foundational shake with natural sweetness, low calories, and complete mineral nutrition to support energy and wellness throughout the day.
+                    </div>
+                </div>
+
+                <!-- Recipe 2: Berry Slim Shake -->
+                <div class="recipe-card" id="berry-slim">
+                    <h3>🫐 Berry Slim Shake</h3>
+                    <div class="recipe-meta">
+                        <div class="meta-item">⏱️ <span>5 mins</span></div>
+                        <div class="meta-item">👥 <span>Serves 1</span></div>
+                        <div class="meta-item">🔥 <span>Easy</span></div>
+                        <div class="meta-item">⚖️ <span>Low-Calorie</span></div>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Ingredients</h4>
+                        <ul class="ingredients-list">
+                            <li>1 tablespoon sea moss gel</li>
+                            <li>1 cup unsweetened almond milk</li>
+                            <li>¼ cup blueberries or strawberries</li>
+                            <li>Ice cubes</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Instructions</h4>
+                        <ol class="instructions-list">
+                            <li>Add sea moss gel to blender</li>
+                            <li>Pour in unsweetened almond milk</li>
+                            <li>Add your choice of blueberries or strawberries</li>
+                            <li>Add ice cubes for a refreshing chill</li>
+                            <li>Blend until smooth</li>
+                            <li>Serve immediately</li>
+                        </ol>
+                    </div>
+
+                    <div class="benefits-note">
+                        <strong>Benefits:</strong> Antioxidants, low sugar, refreshing—perfect for weight management and immune support.
+                    </div>
+                </div>
+
+                <!-- Recipe 3: Tropical Light Shake -->
+                <div class="recipe-card" id="tropical">
+                    <h3>🍍 Tropical Light Shake</h3>
+                    <div class="recipe-meta">
+                        <div class="meta-item">⏱️ <span>5 mins</span></div>
+                        <div class="meta-item">👥 <span>Serves 1</span></div>
+                        <div class="meta-item">🔥 <span>Easy</span></div>
+                        <div class="meta-item">⚖️ <span>Low-Calorie</span></div>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Ingredients</h4>
+                        <ul class="ingredients-list">
+                            <li>1 tablespoon sea moss gel</li>
+                            <li>1 cup unsweetened almond milk</li>
+                            <li>¼ cup pineapple</li>
+                            <li>Splash of lime juice</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Instructions</h4>
+                        <ol class="instructions-list">
+                            <li>Scoop sea moss gel into blender</li>
+                            <li>Add unsweetened almond milk</li>
+                            <li>Add fresh pineapple chunks</li>
+                            <li>Squeeze in a splash of fresh lime juice</li>
+                            <li>Blend until completely smooth</li>
+                            <li>Pour into glass and enjoy the tropical flavor</li>
+                        </ol>
+                    </div>
+
+                    <div class="benefits-note">
+                        <strong>Benefits:</strong> Digestion support, bright tropical flavor, enzyme-rich pineapple aids nutrient absorption.
+                    </div>
+                </div>
+
+                <!-- Recipe 4: Chocolate Protein Lite -->
+                <div class="recipe-card" id="chocolate">
+                    <h3>🍫 Chocolate Protein Lite Shake</h3>
+                    <div class="recipe-meta">
+                        <div class="meta-item">⏱️ <span>5 mins</span></div>
+                        <div class="meta-item">👥 <span>Serves 1</span></div>
+                        <div class="meta-item">🔥 <span>Easy</span></div>
+                        <div class="meta-item">⚖️ <span>Low-Calorie</span></div>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Ingredients</h4>
+                        <ul class="ingredients-list">
+                            <li>1 tablespoon sea moss gel</li>
+                            <li>1 cup unsweetened almond milk</li>
+                            <li>1 teaspoon raw cacao powder</li>
+                            <li>Ice cubes</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Instructions</h4>
+                        <ol class="instructions-list">
+                            <li>Add sea moss gel to blender</li>
+                            <li>Pour in almond milk</li>
+                            <li>Add raw cacao powder for rich chocolate flavor</li>
+                            <li>Add ice cubes</li>
+                            <li>Blend until creamy and frothy</li>
+                            <li>Enjoy as a healthy dessert alternative</li>
+                        </ol>
+                    </div>
+
+                    <div class="benefits-note">
+                        <strong>Benefits:</strong> Energy boost, low-calorie dessert option, antioxidant-rich cacao supports mood and focus.
+                    </div>
+                </div>
+
+                <!-- Recipe 5: Green Detox Shake -->
+                <div class="recipe-card" id="green-detox">
+                    <h3>🥒 Green Detox Shake</h3>
+                    <div class="recipe-meta">
+                        <div class="meta-item">⏱️ <span>7 mins</span></div>
+                        <div class="meta-item">👥 <span>Serves 1</span></div>
+                        <div class="meta-item">🔥 <span>Easy</span></div>
+                        <div class="meta-item">⚖️ <span>Low-Calorie</span></div>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Ingredients</h4>
+                        <ul class="ingredients-list">
+                            <li>1 tablespoon sea moss gel</li>
+                            <li>1 cup unsweetened almond milk</li>
+                            <li>½ cup cucumber</li>
+                            <li>Handful of spinach</li>
+                            <li>Ice cubes</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Instructions</h4>
+                        <ol class="instructions-list">
+                            <li>Add sea moss gel to blender</li>
+                            <li>Pour in almond milk</li>
+                            <li>Add chopped cucumber</li>
+                            <li>Add fresh spinach leaves</li>
+                            <li>Add ice cubes</li>
+                            <li>Blend until completely smooth and vibrant green</li>
+                            <li>Serve immediately for maximum freshness</li>
+                        </ol>
+                    </div>
+
+                    <div class="benefits-note">
+                        <strong>Benefits:</strong> Hydration, detox support, alkalizing greens support cellular cleansing and energy.
+                    </div>
+                </div>
+
+                <!-- Recipe 6: Sea Moss Tea -->
+                <div class="recipe-card" id="tea">
+                    <h3>☕ Sea Moss Tea</h3>
+                    <div class="recipe-meta">
+                        <div class="meta-item">⏱️ <span>15-20 mins</span></div>
+                        <div class="meta-item">👥 <span>Serves 1</span></div>
+                        <div class="meta-item">🔥 <span>Easy</span></div>
+                        <div class="meta-item">🍵 <span>Soothing</span></div>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Ingredients</h4>
+                        <ul class="ingredients-list">
+                            <li>1 tablespoon sea moss gel (or dried sea moss)</li>
+                            <li>1½ cups hot water</li>
+                            <li>Cinnamon stick or ginger slice (optional)</li>
+                            <li>Honey or agave (optional, light amount)</li>
+                        </ul>
+                    </div>
+
+                    <div class="recipe-section">
+                        <h4>Instructions</h4>
+                        <ol class="instructions-list">
+                            <li>Bring water to a gentle boil</li>
+                            <li>Add sea moss gel or soaked dried sea moss</li>
+                            <li>Add cinnamon stick or fresh ginger slice if desired</li>
+                            <li>Simmer for 10–15 minutes, stirring occasionally</li>
+                            <li>Strain if needed to remove solids</li>
+                            <li>Sweeten lightly with honey or agave if desired</li>
+                            <li>Enjoy warm for a soothing wellness ritual</li>
+                        </ol>
+                    </div>
+
+                    <div class="benefits-note">
+                        <strong>Benefits:</strong> Warming, soothing, supports respiratory health and immune function. Perfect for evening relaxation and mineral replenishment.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Irish Sea Moss. Pure superfood nutrition from the ocean to your wellness.</p>
+    </footer>
+
+    <script>
+        // Recipe switching functionality
+        const recipeLinks = document.querySelectorAll('.recipe-link');
+        const recipeCards = document.querySelectorAll('.recipe-card');
+
+        recipeLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                // Remove active class from all links and cards
+                recipeLinks.forEach(l => l.classList.remove('active'));
+                recipeCards.forEach(card => card.classList.remove('active'));
+                
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Show corresponding recipe
+                const recipeId = link.getAttribute('data-recipe');
+                document.getElementById(recipeId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
