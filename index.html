@@ -216,10 +216,145 @@
             line-height: 1.8;
         }
 
+        /* Gel Preparation Section */
+        .gel-prep-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #E8F5F3 100%);
+            position: relative;
+        }
+
+        .gel-prep-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gel-prep-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .gel-prep-header h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: var(--deep-ocean);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .gel-prep-header p {
+            font-size: 1.2rem;
+            color: var(--soft-gray);
+        }
+
+        .gel-prep-card {
+            background: white;
+            border-radius: 25px;
+            padding: 3.5rem;
+            box-shadow: 0 12px 45px rgba(0,0,0,0.08);
+            border: 2px solid var(--ocean-teal);
+        }
+
+        .gel-prep-meta {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--seafoam);
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .gel-two-column {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        @media (max-width: 900px) {
+            .gel-two-column {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .gel-column h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            color: var(--deep-ocean);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .gel-ingredients {
+            list-style: none;
+            padding: 0;
+        }
+
+        .gel-ingredients li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--seafoam);
+            display: flex;
+            align-items: center;
+            font-size: 1.05rem;
+        }
+
+        .gel-ingredients li::before {
+            content: '🌊';
+            margin-right: 1.25rem;
+            font-size: 1.4rem;
+        }
+
+        .gel-instructions {
+            list-style: none;
+            padding: 0;
+            counter-reset: gel-step;
+        }
+
+        .gel-instructions li {
+            padding: 1.25rem 0;
+            padding-left: 3rem;
+            position: relative;
+            border-bottom: 1px dashed var(--seafoam);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            counter-increment: gel-step;
+        }
+
+        .gel-instructions li::before {
+            content: counter(gel-step);
+            position: absolute;
+            left: 0;
+            top: 1.25rem;
+            background: var(--ocean-teal);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .gel-storage-tip {
+            background: linear-gradient(135deg, var(--seafoam), #D4F1E8);
+            padding: 1.5rem 2rem;
+            border-radius: 15px;
+            border-left: 5px solid var(--ocean-teal);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .gel-storage-tip strong {
+            color: var(--deep-ocean);
+            font-size: 1.1rem;
+        }
+
         /* Recipe Section */
         .recipes {
             padding: 6rem 2rem;
-            background: linear-gradient(to bottom, white, var(--seafoam));
+            background: var(--sand-white);
         }
 
         .recipes-header {
@@ -493,11 +628,60 @@
         </div>
     </section>
 
+    <!-- Gel Preparation Section -->
+    <section class="gel-prep-section">
+        <div class="gel-prep-container">
+            <div class="gel-prep-header">
+                <h2>Step 1: Preparing Your Sea Moss Gel</h2>
+                <p>Make your gel once and use it all week in the recipes below</p>
+            </div>
+
+            <div class="gel-prep-content">
+                <div class="gel-prep-card">
+                    <div class="gel-prep-meta">
+                        <div class="meta-item">⏱️ <span>30-40 mins</span></div>
+                        <div class="meta-item">📦 <span>Makes 2-3 cups</span></div>
+                        <div class="meta-item">❄️ <span>Stores 2-3 weeks</span></div>
+                    </div>
+
+                    <div class="gel-two-column">
+                        <div class="gel-column">
+                            <h4>Ingredients</h4>
+                            <ul class="gel-ingredients">
+                                <li>Raw dried sea moss</li>
+                                <li>Filtered water</li>
+                                <li>1 cinnamon stick</li>
+                            </ul>
+                        </div>
+
+                        <div class="gel-column">
+                            <h4>Instructions</h4>
+                            <ol class="gel-instructions">
+                                <li>Rinse the sea moss thoroughly under running water to remove sand, salt, and debris</li>
+                                <li>Place the rinsed sea moss into a pot with fresh filtered water</li>
+                                <li>Add 1 cinnamon stick to the pot</li>
+                                <li>Bring to a boil while continuously stirring to prevent boil-over</li>
+                                <li>Continue boiling until the sea moss completely melts and dissolves</li>
+                                <li>Remove from heat and allow to cool slightly</li>
+                                <li>Transfer to an airtight glass container and store in the refrigerator</li>
+                                <li>Once cooled, it will thicken into a jello-like gel consistency</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="gel-storage-tip">
+                        <strong>💡 Storage Tips:</strong> Store in an airtight glass container in the refrigerator for up to 2-3 weeks. Always use a clean spoon when scooping to maintain freshness. This gel is ready to use in all the delicious recipes below!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Recipe Section -->
     <section class="recipes" id="recipes">
         <div class="recipes-header">
-            <h2>Delicious Sea Moss Recipes</h2>
-            <p>Transform your wellness with these nutrient-packed drinks</p>
+            <h2>Step 2: Delicious Sea Moss Recipes</h2>
+            <p>Use your prepared gel in these nutrient-packed drinks</p>
         </div>
 
         <div class="recipes-container">
@@ -505,8 +689,7 @@
             <aside class="recipe-sidebar">
                 <h3 class="sidebar-title">Browse Recipes</h3>
                 <ul class="recipe-list">
-                    <li><a href="#" class="recipe-link active" data-recipe="gel-prep">Preparing Sea Moss Gel</a></li>
-                    <li><a href="#" class="recipe-link" data-recipe="basic-shake">Basic Sea Moss Shake</a></li>
+                    <li><a href="#" class="recipe-link active" data-recipe="basic-shake">Basic Sea Moss Shake</a></li>
                     <li><a href="#" class="recipe-link" data-recipe="berry-slim">Berry Slim Shake</a></li>
                     <li><a href="#" class="recipe-link" data-recipe="tropical">Tropical Light Shake</a></li>
                     <li><a href="#" class="recipe-link" data-recipe="chocolate">Chocolate Protein Lite</a></li>
@@ -517,46 +700,8 @@
 
             <!-- Recipe Display -->
             <div class="recipe-display">
-                <!-- Recipe 0: Preparing Sea Moss Gel -->
-                <div class="recipe-card active" id="gel-prep">
-                    <h3>Step 1: Preparing Sea Moss Gel</h3>
-                    <div class="recipe-meta">
-                        <div class="meta-item">⏱️ <span>30-40 mins</span></div>
-                        <div class="meta-item">👥 <span>Makes 2-3 cups</span></div>
-                        <div class="meta-item">🔥 <span>Easy</span></div>
-                        <div class="meta-item">📦 <span>Stores 2-3 weeks</span></div>
-                    </div>
-
-                    <div class="recipe-section">
-                        <h4>Ingredients</h4>
-                        <ul class="ingredients-list">
-                            <li>Raw dried sea moss</li>
-                            <li>Filtered water</li>
-                            <li>1 cinnamon stick</li>
-                        </ul>
-                    </div>
-
-                    <div class="recipe-section">
-                        <h4>Instructions</h4>
-                        <ol class="instructions-list">
-                            <li>Rinse the sea moss thoroughly under running water to remove sand, salt, and debris</li>
-                            <li>Place the rinsed sea moss into a pot with fresh filtered water</li>
-                            <li>Add 1 cinnamon stick to the pot</li>
-                            <li>Bring to a boil while continuously stirring to prevent boil-over</li>
-                            <li>Continue boiling until the sea moss completely melts and dissolves</li>
-                            <li>Remove from heat and allow to cool slightly</li>
-                            <li>Transfer to an airtight glass container and store in the refrigerator</li>
-                            <li>Once cooled, it will thicken into a jello-like gel consistency</li>
-                        </ol>
-                    </div>
-
-                    <div class="benefits-note">
-                        <strong>Storage Tips:</strong> Store in an airtight glass container. Refrigerate for up to 2-3 weeks. Always use a clean spoon when scooping to maintain freshness. This gel is the base for all the recipes below!
-                    </div>
-                </div>
-
                 <!-- Recipe 1: Basic Sea Moss Shake -->
-                <div class="recipe-card" id="basic-shake">
+                <div class="recipe-card active" id="basic-shake">
                     <h3>Basic Sea Moss Shake</h3>
                     <div class="recipe-meta">
                         <div class="meta-item">⏱️ <span>5 mins</span></div>
